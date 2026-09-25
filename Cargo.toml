@@ -1,6 +1,6 @@
 [package]
 name = "bracel-starter"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2024"
 rust-version = "1.98"
 publish = false
@@ -8,7 +8,8 @@ license = "MIT"
 default-run = "bracel-starter"
 
 [dependencies]
-bracel = { version = "0.1.1", git = "https://github.com/4H1R/bracel", rev = "d51d06a5e649bce8cdf4c51677b9a67917145840" }
+bracel-integrations = { version = "0.2.0", git = "https://github.com/4H1R/bracel", rev = "300979d9f9ef59f36a616da1e49948e07dc986b5", optional = true, default-features = false }
+bracel = { version = "0.2.0", git = "https://github.com/4H1R/bracel", rev = "300979d9f9ef59f36a616da1e49948e07dc986b5", features = ["jobs", "tokens"] }
 axum = { version = "0.8.9", features = ["json"] }
 sea-orm = { version = "2.0.3", default-features = false, features = ["sqlx-postgres", "runtime-tokio-rustls", "macros", "with-uuid", "with-chrono"] }
 sea-orm-migration = { version = "2.0.3", default-features = false, features = ["sqlx-postgres", "runtime-tokio-rustls"] }
@@ -22,12 +23,21 @@ uuid = { version = "1", features = ["v7", "serde"] }
 url = "2"
 
 [dev-dependencies]
+bracel = { version = "0.2.0", git = "https://github.com/4H1R/bracel", rev = "300979d9f9ef59f36a616da1e49948e07dc986b5", features = ["testing"] }
 base64 = "0.22"
 jsonwebtoken = { version = "11.1", features = ["aws_lc_rs"] }
 tower = { version = "0.5", features = ["util"] }
 
 [lints.rust]
 unsafe_code = "forbid"
+
+[features]
+default = []
+mail = ["dep:bracel-integrations", "bracel-integrations/mail"]
+storage = ["dep:bracel-integrations", "bracel-integrations/storage"]
+cache = ["dep:bracel-integrations", "bracel-integrations/cache"]
+outbound = ["dep:bracel-integrations", "bracel-integrations/http"]
+telemetry = ["dep:bracel-integrations", "bracel-integrations/telemetry"]
 
 [workspace]
 
