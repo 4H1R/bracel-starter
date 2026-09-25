@@ -1,0 +1,29 @@
+use askama::Template;
+use lettre::{AsyncSmtpTransport, AsyncTransport, Message, Tokio1Executor, message::{Mailbox, MultiPart}};
+use std::time::Duration;
+
+#[derive(Template)]
+#[template(path = "note.html")]
+struct NoteTemplate<'a> { title: &'a str }
+
+pub fn render(title: &str) -> Result<String, &'static str> {
+    NoteTemplate { title }.render().map_err(|_| "template rendering failed")
+}
+
+pub fn local_mailer(port: u16) -> AsyncSmtpTransport<Tokio1Executor> {
+    AsyncSmtpTransport::<Tokio1Executor>::builder_dangerous("127.0.0.1")
+        .port(port).timeout(Some(Duration::from_secs(5))).build()
+}
+
+pub async fn send_note(mailer: &AsyncSmtpTransport<Tokio1Executor>, recipient: &str, title: &str) -> Result<(), &'static str> {
+    let recipient: Mailbox = recipient.parse().map_err(|_| "invalid recipient")?;
+    let message = Message::builder()
+        .from("Starter <starter@example.test>".parse().expect("static sender"))
+        .to(recipient).subject("Your note")
+        .multipart(MultiPart::alternative_plain_html(format!("Note: {title}"), render(title)?))
+        .map_err(|_| "message construction failed")?;
+    tokio::time::timeout(Duration::from_secs(5), mailer.send(message)).await
+        .map_err(|_| "mail deadline exceeded")?
+        .map_err(|_| "mail transport failed")?;
+    Ok(())
+}
