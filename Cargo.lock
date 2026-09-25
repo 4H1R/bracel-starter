@@ -414,8 +414,8 @@ dependencies = [
 
 [[package]]
 name = "bracel"
-version = "0.1.0"
-source = "git+https://github.com/4H1R/bracel?rev=541ba3131ccf828e234e5898ea83f35d4949d535#541ba3131ccf828e234e5898ea83f35d4949d535"
+version = "0.1.1"
+source = "git+https://github.com/4H1R/bracel?rev=d51d06a5e649bce8cdf4c51677b9a67917145840#d51d06a5e649bce8cdf4c51677b9a67917145840"
 dependencies = [
  "axum",
  "base64",
@@ -435,21 +435,18 @@ dependencies = [
 
 [[package]]
 name = "bracel-starter"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "axum",
  "base64",
  "bracel",
- "governor",
  "jsonwebtoken",
  "sea-orm",
  "sea-orm-migration",
  "serde",
  "serde_json",
- "sha2 0.10.9",
  "tokio",
  "tower",
- "tower-http",
  "tracing",
  "tracing-subscriber",
  "url",
