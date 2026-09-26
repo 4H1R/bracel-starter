@@ -56,6 +56,19 @@ telemetry = ["dep:bracel-integrations", "bracel-integrations/telemetry"]
 
 [workspace]
 
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev-full]
+inherits = "dev"
+debug = 2
+
 [profile.release]
 strip = true
 lto = "thin"
+
+[profile.release-fast]
+inherits = "release"
+opt-level = 2
+lto = false
+incremental = true
