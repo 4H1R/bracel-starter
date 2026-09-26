@@ -486,7 +486,7 @@ dependencies = [
 [[package]]
 name = "bracel"
 version = "0.3.0"
-source = "git+https://github.com/4H1R/bracel?rev=2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6#2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6"
+source = "git+https://github.com/4H1R/bracel?rev=dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159#dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159"
 dependencies = [
  "axum",
  "base64 0.22.1",
@@ -512,7 +512,7 @@ dependencies = [
 [[package]]
 name = "bracel-data"
 version = "0.3.0"
-source = "git+https://github.com/4H1R/bracel?rev=2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6#2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6"
+source = "git+https://github.com/4H1R/bracel?rev=dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159#dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159"
 dependencies = [
  "bracel",
  "serde",
@@ -525,10 +525,9 @@ dependencies = [
 [[package]]
 name = "bracel-delivery"
 version = "0.3.0"
-source = "git+https://github.com/4H1R/bracel?rev=2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6#2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6"
+source = "git+https://github.com/4H1R/bracel?rev=dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159#dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159"
 dependencies = [
  "bracel",
- "bracel-data",
  "bracel-integrations",
  "bracel-realtime",
  "hmac 0.12.1",
@@ -541,10 +540,9 @@ dependencies = [
 [[package]]
 name = "bracel-files"
 version = "0.3.0"
-source = "git+https://github.com/4H1R/bracel?rev=2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6#2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6"
+source = "git+https://github.com/4H1R/bracel?rev=dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159#dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159"
 dependencies = [
  "bracel",
- "bracel-data",
  "bracel-integrations",
  "serde",
  "serde_json",
@@ -555,7 +553,7 @@ dependencies = [
 [[package]]
 name = "bracel-integrations"
 version = "0.3.0"
-source = "git+https://github.com/4H1R/bracel?rev=2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6#2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6"
+source = "git+https://github.com/4H1R/bracel?rev=dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159#dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159"
 dependencies = [
  "bracel",
  "futures-util",
@@ -578,7 +576,7 @@ dependencies = [
 [[package]]
 name = "bracel-jobs"
 version = "0.3.0"
-source = "git+https://github.com/4H1R/bracel?rev=2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6#2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6"
+source = "git+https://github.com/4H1R/bracel?rev=dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159#dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159"
 dependencies = [
  "chrono",
  "chrono-tz",
@@ -594,7 +592,7 @@ dependencies = [
 [[package]]
 name = "bracel-realtime"
 version = "0.3.0"
-source = "git+https://github.com/4H1R/bracel?rev=2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6#2bd1d0dac95777a9d8ec36f8d4ed8e529c4cf9f6"
+source = "git+https://github.com/4H1R/bracel?rev=dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159#dda47f0e3ba3a4e0fb5a4000cf2b2b61a0d8d159"
 dependencies = [
  "bracel",
  "futures-util",
@@ -626,6 +624,7 @@ dependencies = [
  "serde_json",
  "sha2 0.10.9",
  "tokio",
+ "toml",
  "tower",
  "tracing",
  "tracing-subscriber",
@@ -3237,6 +3236,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "serde_spanned"
+version = "1.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6662b5879511e06e8999a8a235d848113e942c9124f211511b16466ee2995f26"
+dependencies = [
+ "serde_core",
+]
+
+[[package]]
 name = "serde_urlencoded"
 version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3844,6 +3852,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "toml"
+version = "1.1.6+spec-1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "920602543f0911ab71da12c50d59701da54c196d1a2bf5cb4b75667f137a406a"
+dependencies = [
+ "indexmap",
+ "serde_core",
+ "serde_spanned",
+ "toml_datetime",
+ "toml_parser",
+ "toml_writer",
+ "winnow 1.0.4",
+]
+
+[[package]]
 name = "toml_datetime"
 version = "1.1.1+spec-1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3872,6 +3895,12 @@ checksum = "1d38ac1cf9b95face32296c0a3ede1fdc270627c9d9c02a7274dd6d960dc4d56"
 dependencies = [
  "winnow 1.0.4",
 ]
+
+[[package]]
+name = "toml_writer"
+version = "1.1.2+spec-1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7d56353a2a665ad0f41a421187180aab746c8c325620617ad883a99a1cbe66d2"
 
 [[package]]
 name = "tower"
