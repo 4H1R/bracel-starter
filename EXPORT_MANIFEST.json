@@ -1,5 +1,5 @@
 {
-  "framework_revision": "d767942821e76bae02ce44d229b47abed96d1fa6",
+  "framework_revision": "a21259d0bd21e489804cf062858da767db1bd55d",
   "schema_version": 1,
   "sha256": {
     ".dockerignore": "b56598e1f1b21d8a672360ace9756c760a07f05153f604c9fc1722569fbf2b37",
@@ -9,11 +9,11 @@
     ".gitignore": "0c9dabbf678ded464fcfbfbb891ac21f99e910abf765f608454eeb860b761dd3",
     "AGENTS.md": "1c5b3285069e12d4c222fafe70e82963157748ee2cdd0a57995900db971eda45",
     "Cargo.lock": "de976ae7afe994db15731d2b24589955b2cd8fca4563a2bca2cdc9e63fccf877",
-    "Cargo.toml": "c601a70cf81cac926039662b30c7a81e073c820f0b0db84f451c390b2a9b6d58",
+    "Cargo.toml": "4b1d15ab7e0cef49d7f96cc9a8a3f7278daec104c2f240bab8c26ed29d2b4920",
     "Dockerfile": "8f0f42de97a38f72f3909fdb3dffbba940aa9fd5c97ecc07782ab1d8f5fd20d2",
     "LICENSE": "b2acffe8a5868615228573f14eb429b124f8c2f7381f83d001ceac579ea7c8aa",
     "README.md": "ff9ec5b1445e96d4766e8929580cf77f9c4e21c08858962d08eeba3bd4ca4ecf",
-    "STARTER_VERSION": "b8e2e3f86d47aacccf63e2d9c91fee20c59bdee9d6d8dad85b71097c7eed93d5",
+    "STARTER_VERSION": "08253f5f6795891f6c779d6ab3f201f7d269022fc60fd90863c7b92e6c17ebe3",
     "assets/brand/banner.png": "0ece3c5018ac1e0b582871693f4787d0a2d5ef4becf1bae66575bb65bb1053c3",
     "build.rs": "53238fa4a43837b9921b198861fc4e9f35ccddec0f59b87ffca2b8475141befd",
     "compose.yaml": "ad2dcb6c6b319219027dfb8fab4b454fd3aa7fe3c4d598b25133713c563fcfb5",
@@ -136,5 +136,5 @@
     "tests/query.rs": "69f5bf163cf5a762da6171cde7039e46627b25ff82efcb884ca22effb6fd5cc1",
     "tests/support/mod.rs": "1c25c7fd46305448022b7b8c127d1a527b412304ec48993ea2248b963964d687"
   },
-  "source_revision": "d767942821e76bae02ce44d229b47abed96d1fa6"
+  "source_revision": "a21259d0bd21e489804cf062858da767db1bd55d"
 }

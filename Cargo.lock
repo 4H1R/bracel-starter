@@ -486,7 +486,7 @@ dependencies = [
 [[package]]
 name = "bracel"
 version = "0.4.0"
-source = "git+https://github.com/4H1R/bracel?rev=d767942821e76bae02ce44d229b47abed96d1fa6#d767942821e76bae02ce44d229b47abed96d1fa6"
+source = "git+https://github.com/4H1R/bracel?rev=a21259d0bd21e489804cf062858da767db1bd55d#a21259d0bd21e489804cf062858da767db1bd55d"
 dependencies = [
  "axum",
  "base64 0.22.1",
@@ -512,7 +512,7 @@ dependencies = [
 [[package]]
 name = "bracel-data"
 version = "0.4.0"
-source = "git+https://github.com/4H1R/bracel?rev=d767942821e76bae02ce44d229b47abed96d1fa6#d767942821e76bae02ce44d229b47abed96d1fa6"
+source = "git+https://github.com/4H1R/bracel?rev=a21259d0bd21e489804cf062858da767db1bd55d#a21259d0bd21e489804cf062858da767db1bd55d"
 dependencies = [
  "bracel",
  "serde",
@@ -525,7 +525,7 @@ dependencies = [
 [[package]]
 name = "bracel-delivery"
 version = "0.4.0"
-source = "git+https://github.com/4H1R/bracel?rev=d767942821e76bae02ce44d229b47abed96d1fa6#d767942821e76bae02ce44d229b47abed96d1fa6"
+source = "git+https://github.com/4H1R/bracel?rev=a21259d0bd21e489804cf062858da767db1bd55d#a21259d0bd21e489804cf062858da767db1bd55d"
 dependencies = [
  "bracel",
  "bracel-integrations",
@@ -540,7 +540,7 @@ dependencies = [
 [[package]]
 name = "bracel-files"
 version = "0.4.0"
-source = "git+https://github.com/4H1R/bracel?rev=d767942821e76bae02ce44d229b47abed96d1fa6#d767942821e76bae02ce44d229b47abed96d1fa6"
+source = "git+https://github.com/4H1R/bracel?rev=a21259d0bd21e489804cf062858da767db1bd55d#a21259d0bd21e489804cf062858da767db1bd55d"
 dependencies = [
  "bracel",
  "bracel-integrations",
@@ -553,7 +553,7 @@ dependencies = [
 [[package]]
 name = "bracel-integrations"
 version = "0.4.0"
-source = "git+https://github.com/4H1R/bracel?rev=d767942821e76bae02ce44d229b47abed96d1fa6#d767942821e76bae02ce44d229b47abed96d1fa6"
+source = "git+https://github.com/4H1R/bracel?rev=a21259d0bd21e489804cf062858da767db1bd55d#a21259d0bd21e489804cf062858da767db1bd55d"
 dependencies = [
  "bracel",
  "futures-util",
@@ -576,7 +576,7 @@ dependencies = [
 [[package]]
 name = "bracel-jobs"
 version = "0.4.0"
-source = "git+https://github.com/4H1R/bracel?rev=d767942821e76bae02ce44d229b47abed96d1fa6#d767942821e76bae02ce44d229b47abed96d1fa6"
+source = "git+https://github.com/4H1R/bracel?rev=a21259d0bd21e489804cf062858da767db1bd55d#a21259d0bd21e489804cf062858da767db1bd55d"
 dependencies = [
  "chrono",
  "chrono-tz",
@@ -592,7 +592,7 @@ dependencies = [
 [[package]]
 name = "bracel-realtime"
 version = "0.4.0"
-source = "git+https://github.com/4H1R/bracel?rev=d767942821e76bae02ce44d229b47abed96d1fa6#d767942821e76bae02ce44d229b47abed96d1fa6"
+source = "git+https://github.com/4H1R/bracel?rev=a21259d0bd21e489804cf062858da767db1bd55d#a21259d0bd21e489804cf062858da767db1bd55d"
 dependencies = [
  "bracel",
  "futures-util",
