@@ -1,6 +1,6 @@
 # Backend organization
 
-The application is a modular monolith in one crate, depending on the Bracel framework for common HTTP, query and identity behavior. The [stack decision](adr/0001-stack.md) selects the runtime; [feature organization and HTTP contracts](adr/0002-feature-modules-and-http-contracts.md) records the design trade-offs.
+The application is a modular monolith in one crate, depending on the Bracel framework for common HTTP, query and identity behavior. The [stack decision](https://github.com/4H1R/bracel/blob/a21259d0bd21e489804cf062858da767db1bd55d/starter/docs/adr/0001-stack.md) selects the runtime; [feature organization and HTTP contracts](https://github.com/4H1R/bracel/blob/a21259d0bd21e489804cf062858da767db1bd55d/starter/docs/adr/0002-feature-modules-and-http-contracts.md) records the design trade-offs.
 
 `src/features/<feature>/mod.rs` defines the feature's public interface. The notes feature exports application operations and their input/output types; its SeaORM entity and implementation modules remain private. Other features call those operations, passing an existing transaction when composing atomic work. Cross-feature writes belong in an explicit coordinating operation, not in unrelated handlers.
 
@@ -14,7 +14,7 @@ The application is a modular monolith in one crate, depending on the Bracel fram
 | `src/cli/` | Application commands and operator diagnostics. |
 | `src/http/mod.rs` | Router assembly, health/readiness and OpenAPI. |
 | `src/batteries/` | Optional runnable examples for package integrations, including their commands and collection routes. |
-| `bracel::http::middleware` | Common HTTP stack and explicit shared route policies; [composition guide](middleware.md). |
+| `bracel::http::middleware` | Common HTTP stack and explicit shared route policies; [composition guide](https://github.com/4H1R/bracel/blob/a21259d0bd21e489804cf062858da767db1bd55d/starter/docs/middleware.md). |
 | `bracel::identity` | Bearer access-token verification and typed principal. |
 | `bracel::query`, `bracel::http::query` | Allowlisted collection query application and bounded URL decoding. |
 | `src/features/notes/query.rs` | Notes filter/sort declarations, also consumed by OpenAPI and inspect. |
@@ -42,4 +42,4 @@ Generated CRUD follows the same ownership pattern: its entity and application im
 
 Use DDD selectively: model invariants and use domain terminology when an operation has meaningful rules beyond CRUD. Create `domain.rs` only when those rules need it. Use concrete SeaORM operations rather than generic repository wrappers; external integration adapters can justify a small interface. A new feature needs only the files it uses, not an empty copy of every layer.
 
-To extend the starter, use the resource generator or put feature behavior behind its module interface, register annotated handlers through Registry, append any migration, and verify success/failure behavior through application operations and real HTTP/database tests. Routing, schemas and inspection metadata follow the same registration. The [batteries guide](batteries.md) describes the generator and extension interfaces. Follow [data](features/data.md) for collection queries and [identity](features/identity.md) before adding private resources.
+To extend the starter, use the resource generator or put feature behavior behind its module interface, register annotated handlers through Registry, append any migration, and verify success/failure behavior through application operations and real HTTP/database tests. Routing, schemas and inspection metadata follow the same registration. The [batteries guide](https://github.com/4H1R/bracel/blob/a21259d0bd21e489804cf062858da767db1bd55d/starter/docs/batteries.md) describes the generator and extension interfaces. Follow [data](https://github.com/4H1R/bracel/blob/a21259d0bd21e489804cf062858da767db1bd55d/starter/docs/features/data.md) for collection queries and [identity](https://github.com/4H1R/bracel/blob/a21259d0bd21e489804cf062858da767db1bd55d/starter/docs/features/identity.md) before adding private resources.
